@@ -1,0 +1,1155 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to kaleyra-python’s documentation! &#8212; kaleyra-python 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">kaleyra-python 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-kaleyra-python-s-documentation">
+<h1>Welcome to kaleyra-python’s documentation!<a class="headerlink" href="#welcome-to-kaleyra-python-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="module-api.messaging.k_request">
+<span id="krequest"></span><h2>KRequest<a class="headerlink" href="#module-api.messaging.k_request" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.messaging.k_request.KRequest">
+<em class="property">class </em><code class="sig-prename descclassname">api.messaging.k_request.</code><code class="sig-name descname">KRequest</code><span class="sig-paren">(</span><em class="sig-param">message</em>, <em class="sig-param">to</em><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.k_request.KRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class.</p>
+<p>Note: KRequest is inherited by SMSMessageRequest and GroupRequest.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.messaging.sms.sms_message_request">
+<span id="smsmessagerequest"></span><h2>SMSMessageRequest<a class="headerlink" href="#module-api.messaging.sms.sms_message_request" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest">
+<em class="property">class </em><code class="sig-prename descclassname">api.messaging.sms.sms_message_request.</code><code class="sig-name descname">SMSMessageRequest</code><span class="sig-paren">(</span><em class="sig-param">message=None</em>, <em class="sig-param">to=None</em>, <em class="sig-param">custom=None</em>, <em class="sig-param">datetime=None</em>, <em class="sig-param">dlr_url=None</em>, <em class="sig-param">flash=None</em>, <em class="sig-param">format=None</em>, <em class="sig-param">from_date=None</em>, <em class="sig-param">group_id=None</em>, <em class="sig-param">id=None</em>, <em class="sig-param">port=None</em>, <em class="sig-param">to_date=None</em>, <em class="sig-param">unicode=None</em><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest.credit_status">
+<code class="sig-name descname">credit_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest.credit_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to check the available credits in the user’s account.</p>
+<p>:return:object of SMSMessageResponse which would be used to return a specific response as per the user’s
+requirement.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest.credit_usage">
+<code class="sig-name descname">credit_usage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest.credit_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to check credit usage of the user(API key) between two valid dates entered by the user.</p>
+<p>:return:object of SMSMessageResponse which would be used to return a specific response as per the user’s
+requirement.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to delete a scheduled SMS campaign after a valid message-id is received from the user.</p>
+<p>:return:object of SMSMessageResponse which would be used to return a specific response as per the user’s
+requirements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest.edit">
+<code class="sig-name descname">edit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest.edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to edit a scheduled SMS campaign after the mandatory parameters are validated and ID of the SMS campaign
+is entered correctly.</p>
+<p>:return:object of SMSMessageResponse which would be used to return a specific response as per the user’s
+requirements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest.schedule">
+<code class="sig-name descname">schedule</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest.schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to schedule a SMS campaign to a specified date and time after the required mandatory parameters received
+from the user are validated.
+dlr_url, custom, unicode and flash are optional parameters.</p>
+<p>:return:object of SMSMessageResponse which would be used to return a specific response as per the user’s
+requirements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest.send">
+<code class="sig-name descname">send</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to send a SMS campaign after the required mandatory parameters received from the user are validated.
+dlr_url, custom, unicode and flash are optional parameters.</p>
+<p>:return:object of smsMessageResponse which would be used to return a specific response as per the user’s
+requirements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest.set_schedule">
+<code class="sig-name descname">set_schedule</code><span class="sig-paren">(</span><em class="sig-param">datetime</em>, <em class="sig-param">format</em><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest.set_schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to set the date and time when a SMS campaign is scheduled/edited.</p>
+<p>:return:None</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_request.SMSMessageRequest.sms_status">
+<code class="sig-name descname">sms_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_request.SMSMessageRequest.sms_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to check the status of any sent SMS campaign using it’s message ID(not group ID).</p>
+<p>:return:object of SMSMessageResponse which would be used to return a specific response as per the user’s
+requirement.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.messaging.group.group_request">
+<span id="grouprequest"></span><h2>GroupRequest<a class="headerlink" href="#module-api.messaging.group.group_request" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.messaging.group.group_request.GroupRequest">
+<em class="property">class </em><code class="sig-prename descclassname">api.messaging.group.group_request.</code><code class="sig-name descname">GroupRequest</code><span class="sig-paren">(</span><em class="sig-param">message=None</em>, <em class="sig-param">to=None</em>, <em class="sig-param">email_id=None</em>, <em class="sig-param">full_name=None</em>, <em class="sig-param">group_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_request.GroupRequest" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="api.messaging.group.group_request.GroupRequest.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_request.GroupRequest.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to add contacts to an SMS group that already exists.
+full_name and email_id are optional parameters.</p>
+<p>:return:groupResponse object which would be used to return a specific response as per user’s requirements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_request.GroupRequest.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_request.GroupRequest.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to create a group of contacts having a unique name so that you can simply type the group name to send an
+SMS campaign.</p>
+<p>:return:groupResponse object which would be used to return a specific response as per user’s requirements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_request.GroupRequest.send">
+<code class="sig-name descname">send</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_request.GroupRequest.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to send an SMS to a group of contacts.</p>
+<p>:return:groupResponse object which would be used to return a specific response as per user’s requirements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_request.GroupRequest.send_optin">
+<code class="sig-name descname">send_optin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_request.GroupRequest.send_optin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to send an SMS to an optin group of contacts.</p>
+<p>:return:groupResponse object which would be used to return a specific response as per user’s requirements.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.messaging.k_response">
+<span id="kresponse"></span><h2>KResponse<a class="headerlink" href="#module-api.messaging.k_response" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.messaging.k_response.KResponse">
+<em class="property">class </em><code class="sig-prename descclassname">api.messaging.k_response.</code><code class="sig-name descname">KResponse</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">response</em>, <em class="sig-param">message</em>, <em class="sig-param">status</em>, <em class="sig-param">status_code</em><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.k_response.KResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class.</p>
+<p>Note: KResponse is inherited by SMSMessageResponse and GroupResponse.</p>
+<dl class="method">
+<dt id="api.messaging.k_response.KResponse.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.k_response.KResponse.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridden abstract method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.k_response.KResponse.get_message">
+<code class="sig-name descname">get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.k_response.KResponse.get_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridden abstract method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.k_response.KResponse.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.k_response.KResponse.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridden abstract method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.k_response.KResponse.get_status_code">
+<code class="sig-name descname">get_status_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.k_response.KResponse.get_status_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridden abstract method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.k_response.KResponse.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.k_response.KResponse.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridden abstract method.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.messaging.sms.sms_message_response">
+<span id="smsmessageresponse"></span><h2>SMSMessageResponse<a class="headerlink" href="#module-api.messaging.sms.sms_message_response" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse">
+<em class="property">class </em><code class="sig-prename descclassname">api.messaging.sms.sms_message_response.</code><code class="sig-name descname">SMSMessageResponse</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">message=None</em>, <em class="sig-param">status=None</em>, <em class="sig-param">status_code=None</em>, <em class="sig-param">response=None</em>, <em class="sig-param">position=None</em><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_credits">
+<code class="sig-name descname">get_credits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_credits" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:credits</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_customid">
+<code class="sig-name descname">get_customid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_customid" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:customid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_customid1">
+<code class="sig-name descname">get_customid1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_customid1" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:customid1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_customid2">
+<code class="sig-name descname">get_customid2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_customid2" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:customid2</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_delivery_time">
+<code class="sig-name descname">get_delivery_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_delivery_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:delivery_time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_dlr_status">
+<code class="sig-name descname">get_dlr_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_dlr_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:delivery_status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_end_date">
+<code class="sig-name descname">get_end_date</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_end_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:end_date</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_id">
+<code class="sig-name descname">get_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_message">
+<code class="sig-name descname">get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:message</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_mobile">
+<code class="sig-name descname">get_mobile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_mobile" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:mobile</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_sent_time">
+<code class="sig-name descname">get_sent_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_sent_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:sent_time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_start_date">
+<code class="sig-name descname">get_start_date</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_start_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:start_date</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_status_code">
+<code class="sig-name descname">get_status_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_status_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status_code</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_total_credits">
+<code class="sig-name descname">get_total_credits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_total_credits" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:total_credits</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.get_total_sms">
+<code class="sig-name descname">get_total_sms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.get_total_sms" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:total_sms</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.sms.sms_message_response.SMSMessageResponse.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.sms.sms_message_response.SMSMessageResponse.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:json</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.messaging.group.group_response">
+<span id="groupresponse"></span><h2>GroupResponse<a class="headerlink" href="#module-api.messaging.group.group_response" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.messaging.group.group_response.GroupResponse">
+<em class="property">class </em><code class="sig-prename descclassname">api.messaging.group.group_response.</code><code class="sig-name descname">GroupResponse</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">json_response=None</em>, <em class="sig-param">message=None</em>, <em class="sig-param">status=None</em>, <em class="sig-param">status_code=None</em>, <em class="sig-param">response=None</em><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_response.GroupResponse" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="api.messaging.group.group_response.GroupResponse.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_response.GroupResponse.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_response.GroupResponse.get_group_id">
+<code class="sig-name descname">get_group_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_response.GroupResponse.get_group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:group_id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_response.GroupResponse.get_message">
+<code class="sig-name descname">get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_response.GroupResponse.get_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:message</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_response.GroupResponse.get_sms_message_responses">
+<code class="sig-name descname">get_sms_message_responses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_response.GroupResponse.get_sms_message_responses" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:smsMessageResponse</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_response.GroupResponse.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_response.GroupResponse.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_response.GroupResponse.get_status_code">
+<code class="sig-name descname">get_status_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_response.GroupResponse.get_status_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status_code</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.messaging.group.group_response.GroupResponse.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.messaging.group.group_response.GroupResponse.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:json_response</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.txtly.txtly_response">
+<span id="txtlyresponse"></span><h2>TxtlyResponse<a class="headerlink" href="#module-api.txtly.txtly_response" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.txtly.txtly_response.TxtlyResponse">
+<em class="property">class </em><code class="sig-prename descclassname">api.txtly.txtly_response.</code><code class="sig-name descname">TxtlyResponse</code><span class="sig-paren">(</span><em class="sig-param">response</em><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_response.TxtlyResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor parses the response received from the server and populates the attributes of the class. The
+attributes are then returned when a function call is made by the user.</p>
+<p>‘response’ parameter receives the HTTP response from the server.</p>
+<p>Note: The value of all attributes are initially considered as None.</p>
+<dl class="method">
+<dt id="api.txtly.txtly_response.TxtlyResponse.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_response.TxtlyResponse.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_response.TxtlyResponse.get_id">
+<code class="sig-name descname">get_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_response.TxtlyResponse.get_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_response.TxtlyResponse.get_message">
+<code class="sig-name descname">get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_response.TxtlyResponse.get_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:message</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_response.TxtlyResponse.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_response.TxtlyResponse.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_response.TxtlyResponse.get_token">
+<code class="sig-name descname">get_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_response.TxtlyResponse.get_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:token</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_response.TxtlyResponse.get_txtly_link">
+<code class="sig-name descname">get_txtly_link</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_response.TxtlyResponse.get_txtly_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:txtly</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_response.TxtlyResponse.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_response.TxtlyResponse.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:json</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.txtly.txtly_request">
+<span id="txtlyrequest"></span><h2>TxtlyRequest<a class="headerlink" href="#module-api.txtly.txtly_request" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.txtly.txtly_request.TxtlyRequest">
+<em class="property">class </em><code class="sig-prename descclassname">api.txtly.txtly_request.</code><code class="sig-name descname">TxtlyRequest</code><span class="sig-paren">(</span><em class="sig-param">advanced=None</em>, <em class="sig-param">id=None</em>, <em class="sig-param">name=None</em>, <em class="sig-param">page=None</em>, <em class="sig-param">title=None</em>, <em class="sig-param">token=None</em>, <em class="sig-param">track=None</em>, <em class="sig-param">url=None</em><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_request.TxtlyRequest" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="api.txtly.txtly_request.TxtlyRequest.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_request.TxtlyRequest.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to create a txtly URL to be sent as a message.</p>
+<p>Txtly is basically a shortened URL which can be used within text messages so that SMS would not exceed
+the specified characters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>txtlyResponse object which is used to return a specific response as per user’s requirements</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_request.TxtlyRequest.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_request.TxtlyRequest.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to delete an existing Txtly web link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>txtlyResponse object which is used to return a specific response as per user’s requirements</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_request.TxtlyRequest.log">
+<code class="sig-name descname">log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_request.TxtlyRequest.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to extract the logs of all the Txtly link that have been shortened in the user’s account.
+page is an optional parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>txtlyResponse object which is used to return a specific response as per user’s requirements</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_request.TxtlyRequest.report">
+<code class="sig-name descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_request.TxtlyRequest.report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to extract the reports of all the Txtly links that have been shortened in the user’s account
+page is an optional parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>txtlyResponse object which is used to return a specific response as per user’s requirements</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.txtly.txtly_log">
+<span id="txtlylog"></span><h2>TxtlyLog<a class="headerlink" href="#module-api.txtly.txtly_log" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.txtly.txtly_log.TxtlyLog">
+<em class="property">class </em><code class="sig-prename descclassname">api.txtly.txtly_log.</code><code class="sig-name descname">TxtlyLog</code><span class="sig-paren">(</span><em class="sig-param">response</em><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="api.txtly.txtly_log.TxtlyLog.Pagination">
+<em class="property">class </em><code class="sig-name descname">Pagination</code><span class="sig-paren">(</span><em class="sig-param">response</em><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Pagination" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pagination is a nested class within TxtlyLog</p>
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Pagination.get_extra">
+<code class="sig-name descname">get_extra</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Pagination.get_extra" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:extra</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Pagination.get_limit">
+<code class="sig-name descname">get_limit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Pagination.get_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:limit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Pagination.get_limitstart">
+<code class="sig-name descname">get_limitstart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Pagination.get_limitstart" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:limitstart</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Pagination.get_next">
+<code class="sig-name descname">get_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Pagination.get_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:next</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Pagination.get_now">
+<code class="sig-name descname">get_now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Pagination.get_now" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:now</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Pagination.get_page">
+<code class="sig-name descname">get_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Pagination.get_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:page</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Pagination.get_total">
+<code class="sig-name descname">get_total</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Pagination.get_total" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:total</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys">
+<em class="property">class </em><code class="sig-name descname">Txtlys</code><span class="sig-paren">(</span><em class="sig-param">response</em><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Txtlys is a nested class within TxtlyLog</p>
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_browser">
+<code class="sig-name descname">get_browser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_browser" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:browser</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_browser_engine">
+<code class="sig-name descname">get_browser_engine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_browser_engine" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:browser_engine</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_browser_lang">
+<code class="sig-name descname">get_browser_lang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_browser_lang" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:browser_lang</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_browser_version">
+<code class="sig-name descname">get_browser_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_browser_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:browser_version</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_city">
+<code class="sig-name descname">get_city</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_city" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:city</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_client_ip">
+<code class="sig-name descname">get_client_ip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_client_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:client_ip</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_country">
+<code class="sig-name descname">get_country</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_country" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:country</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_created">
+<code class="sig-name descname">get_created</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:created</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_device_brand">
+<code class="sig-name descname">get_device_brand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_device_brand" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:device_brand</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_device_model">
+<code class="sig-name descname">get_device_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_device_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:device_model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_device_type">
+<code class="sig-name descname">get_device_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_device_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:device_type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_device_version">
+<code class="sig-name descname">get_device_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_device_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:device_version</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_fk_link_id">
+<code class="sig-name descname">get_fk_link_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_fk_link_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:fk_link_id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_fkuserid">
+<code class="sig-name descname">get_fkuserid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_fkuserid" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:fkuserid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_host">
+<code class="sig-name descname">get_host</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_host" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:host</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_latitude">
+<code class="sig-name descname">get_latitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_latitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:latitude</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_log_id">
+<code class="sig-name descname">get_log_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_log_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:log_id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_longitude">
+<code class="sig-name descname">get_longitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_longitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:longitude</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_mobile">
+<code class="sig-name descname">get_mobile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_mobile" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:mobile</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_platform">
+<code class="sig-name descname">get_platform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_platform" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:platform</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_platform_version">
+<code class="sig-name descname">get_platform_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_platform_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:platform_version</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_query_string">
+<code class="sig-name descname">get_query_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_query_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:query_string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_region">
+<code class="sig-name descname">get_region</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:region</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_resolution">
+<code class="sig-name descname">get_resolution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:resolution</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_scheme">
+<code class="sig-name descname">get_scheme</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_scheme" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:scheme</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_serial">
+<code class="sig-name descname">get_serial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:serial</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_touch_enabled">
+<code class="sig-name descname">get_touch_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_touch_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:touch_enabled</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.get_user_agent">
+<code class="sig-name descname">get_user_agent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.get_user_agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:user_agent</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.Txtlys.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.Txtlys.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:json_response</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.get_message">
+<code class="sig-name descname">get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.get_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:message</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.get_pagination">
+<code class="sig-name descname">get_pagination</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.get_pagination" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:pagination</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.get_pagination_responses">
+<code class="sig-name descname">get_pagination_responses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.get_pagination_responses" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:pagination_obj</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.get_txtlys">
+<code class="sig-name descname">get_txtlys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.get_txtlys" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:txtlys</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.get_txtlys_responses">
+<code class="sig-name descname">get_txtlys_responses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.get_txtlys_responses" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:txtly_responses</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_log.TxtlyLog.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_log.TxtlyLog.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:json_response</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api.txtly.txtly_report">
+<span id="txtlyreport"></span><h2>TxtlyReport<a class="headerlink" href="#module-api.txtly.txtly_report" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="api.txtly.txtly_report.TxtlyReport">
+<em class="property">class </em><code class="sig-prename descclassname">api.txtly.txtly_report.</code><code class="sig-name descname">TxtlyReport</code><span class="sig-paren">(</span><em class="sig-param">response</em><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="api.txtly.txtly_report.TxtlyReport.Pagination">
+<em class="property">class </em><code class="sig-name descname">Pagination</code><span class="sig-paren">(</span><em class="sig-param">response</em><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Pagination" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pagination is a nested class within TxtlyReport</p>
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Pagination.get_extra">
+<code class="sig-name descname">get_extra</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Pagination.get_extra" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:extra</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Pagination.get_limit">
+<code class="sig-name descname">get_limit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Pagination.get_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:limit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Pagination.get_limitstart">
+<code class="sig-name descname">get_limitstart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Pagination.get_limitstart" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:limitstart</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Pagination.get_next">
+<code class="sig-name descname">get_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Pagination.get_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:next</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Pagination.get_now">
+<code class="sig-name descname">get_now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Pagination.get_now" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:now</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Pagination.get_page">
+<code class="sig-name descname">get_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Pagination.get_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:page</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Pagination.get_total">
+<code class="sig-name descname">get_total</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Pagination.get_total" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:total</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys">
+<em class="property">class </em><code class="sig-name descname">Txtlys</code><span class="sig-paren">(</span><em class="sig-param">response</em><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Txtlys is a nested class within TxtlyReport</p>
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_advanced">
+<code class="sig-name descname">get_advanced</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_advanced" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:advanced</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_callback">
+<code class="sig-name descname">get_callback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:callback</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_created">
+<code class="sig-name descname">get_created</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:created</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_last_viewed">
+<code class="sig-name descname">get_last_viewed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_last_viewed" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:last_viewed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_link_id">
+<code class="sig-name descname">get_link_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_link_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:link_id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_link_type">
+<code class="sig-name descname">get_link_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_link_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:link_type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_long_url">
+<code class="sig-name descname">get_long_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_long_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:long_url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_meta_value">
+<code class="sig-name descname">get_meta_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_meta_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:meta_value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_serial">
+<code class="sig-name descname">get_serial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:serial</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_short_url">
+<code class="sig-name descname">get_short_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_short_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:short_url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_title">
+<code class="sig-name descname">get_title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:title</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_token">
+<code class="sig-name descname">get_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:token</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_uw">
+<code class="sig-name descname">get_uw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_uw" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:uw</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.get_views">
+<code class="sig-name descname">get_views</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.get_views" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:views</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.Txtlys.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.Txtlys.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:json_response</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.get_message">
+<code class="sig-name descname">get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.get_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:message</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.get_pagination">
+<code class="sig-name descname">get_pagination</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.get_pagination" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:pagination</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.get_pagination_responses">
+<code class="sig-name descname">get_pagination_responses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.get_pagination_responses" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:pagination_obj</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.get_txtlys">
+<code class="sig-name descname">get_txtlys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.get_txtlys" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:txtlys</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.get_txtlys_responses">
+<code class="sig-name descname">get_txtlys_responses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.get_txtlys_responses" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:txtly_responses</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.txtly.txtly_report.TxtlyReport.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.txtly.txtly_report.TxtlyReport.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return:json_response</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utility.klient">
+<span id="klient"></span><h2>Klient<a class="headerlink" href="#module-utility.klient" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="utility.klient.Klient">
+<em class="property">class </em><code class="sig-prename descclassname">utility.klient.</code><code class="sig-name descname">Klient</code><span class="sig-paren">(</span><em class="sig-param">url</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.klient.Klient" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="utility.klient.Klient.response">
+<code class="sig-name descname">response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utility.klient.Klient.response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a HTTP GET request to the server.</p>
+<p>:return:response in JSON format</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utility.validation">
+<span id="validation"></span><h2>Validation<a class="headerlink" href="#module-utility.validation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="utility.validation.Validate">
+<em class="property">class </em><code class="sig-prename descclassname">utility.validation.</code><code class="sig-name descname">Validate</code><a class="headerlink" href="#utility.validation.Validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates a particular parameter entered by the user with the required correct format.
+If the parameter/parameters entered by the user is not validated,then the execution of API is restricted.</p>
+<dl class="method">
+<dt id="utility.validation.Validate.abbr_month">
+<em class="property">static </em><code class="sig-name descname">abbr_month</code><span class="sig-paren">(</span><em class="sig-param">date_time</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.validation.Validate.abbr_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to convert the datetime entered by the user in a format which has month entered in the abbreviated form
+to a standard format.
+Prints an alert statement to the user if the difference between the datetime entered by the user and the current
+datetime is not sufficient.
+Otherwise the date and time is converted to the string format and concatenated to a single string variable.</p>
+<dl class="simple">
+<dt>:return:False if the time difference between the entered datetime and current time if not sufficient.</dt><dd><p>Otherwise,a string format of standard datetime which is required by the API is returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="utility.validation.Validate.date_and_time_validation">
+<em class="property">static </em><code class="sig-name descname">date_and_time_validation</code><span class="sig-paren">(</span><em class="sig-param">date_time</em>, <em class="sig-param">format</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.validation.Validate.date_and_time_validation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method which receives parameters entered by the user and converts it to a standard datetime format required by
+the API by calling the respective functions that are defined above, depending on the type of datetime format
+entered by the user.
+If the format and datetime entered by the user is incorrect, then an alert message is displayed to the user.</p>
+<p>:return:Correct format of datetime obtained from datething() or abbr_month().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="utility.validation.Validate.date_validation">
+<em class="property">static </em><code class="sig-name descname">date_validation</code><span class="sig-paren">(</span><em class="sig-param">date</em>, <em class="sig-param">format</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.validation.Validate.date_validation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method which receives parameters entered by the user and converts it to a standard date format required by
+the API by calling the respective functions depending on the type of date format entered by the user.
+If the format and date entered is incorrect, then an alert message is displayed to the user.</p>
+<p>:return:Correct format of date that is required by the API.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="utility.validation.Validate.datething">
+<em class="property">static </em><code class="sig-name descname">datething</code><span class="sig-paren">(</span><em class="sig-param">date</em>, <em class="sig-param">month</em>, <em class="sig-param">year</em>, <em class="sig-param">time</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.validation.Validate.datething" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method used to concatenate the standard date and time and compare it with the current datetime.
+Prints an alert statement to the user if the datetime difference is not sufficient.
+Otherwise the date and time is converted to the string format and concatenated to a single string variable.</p>
+<dl class="simple">
+<dt>:return:False if the datetime difference between the the entered datetime and current time is not sufficient.</dt><dd><p>Otherwise,a string format of standard datetime which is required by the API is returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="utility.validation.Validate.group_name">
+<em class="property">static </em><code class="sig-name descname">group_name</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.validation.Validate.group_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to check whether the group_name has some content or is null.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>False and an alert message to the user if the group_name is blank and exits the execution.
+Otherwise it returns True and continues with the execution of API.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="utility.validation.Validate.message">
+<em class="property">static </em><code class="sig-name descname">message</code><span class="sig-paren">(</span><em class="sig-param">message</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.validation.Validate.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to check whether the message parameter has some content or is null.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>False and an alert message to the user if the message parameter is blank and exits the execution.
+Otherwise it returns True and continues with the execution of API.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="utility.validation.Validate.number">
+<em class="property">static </em><code class="sig-name descname">number</code><span class="sig-paren">(</span><em class="sig-param">to</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.validation.Validate.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to check whether the number entered is in the correct format or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>False and an alert message to the user if the number is not a valid number and exits the execution.
+Otherwise it returns True and continues with the execution of API.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to kaleyra-python’s documentation!</a><ul>
+<li><a class="reference internal" href="#module-api.messaging.k_request">KRequest</a></li>
+<li><a class="reference internal" href="#module-api.messaging.sms.sms_message_request">SMSMessageRequest</a></li>
+<li><a class="reference internal" href="#module-api.messaging.group.group_request">GroupRequest</a></li>
+<li><a class="reference internal" href="#module-api.messaging.k_response">KResponse</a></li>
+<li><a class="reference internal" href="#module-api.messaging.sms.sms_message_response">SMSMessageResponse</a></li>
+<li><a class="reference internal" href="#module-api.messaging.group.group_response">GroupResponse</a></li>
+<li><a class="reference internal" href="#module-api.txtly.txtly_response">TxtlyResponse</a></li>
+<li><a class="reference internal" href="#module-api.txtly.txtly_request">TxtlyRequest</a></li>
+<li><a class="reference internal" href="#module-api.txtly.txtly_log">TxtlyLog</a></li>
+<li><a class="reference internal" href="#module-api.txtly.txtly_report">TxtlyReport</a></li>
+<li><a class="reference internal" href="#module-utility.klient">Klient</a></li>
+<li><a class="reference internal" href="#module-utility.validation">Validation</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">kaleyra-python 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Kaleyra.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

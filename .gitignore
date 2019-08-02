@@ -1,0 +1,11 @@
+.idea/
+__pycharm__/
+api/__pycache__
+api/txtly/__pycache__
+utility/__pycache__
+configuration/__pycache__
+api/messaging/__pycache__
+api/messaging/sms/__pycache__
+api/messaging/__pycache__
+api/messaging/group/__pycache__
+api/messaging/sms/__pycache__
