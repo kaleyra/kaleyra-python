@@ -302,268 +302,399 @@ class Validate:
             r"^(([A-Za-z]+)[- /.,](0?[1-9]|[12][0-9]|3[01])[- /.,]([2-9][0-9]|(19))\s?((0?[0-9]|1[0-9]|2[0-4])[:](0?[0-9]|[1-5][0-9])\s?(AM|am|PM|pm|Am|aM|Pm|pM)))$",
             date_time)  # mon-dd-yy HH:MM AM/PM
 
-        if True:
-            if date_format == 'dd-mm-yyyy hh:mm' or date_format == 'dd.mm.yyyy hh:mm' or date_format == 'dd mm yyyy hh:mm' or date_format == 'dd/mm/yyyy hh:mm':
-                if x:
-                    var, date_time = Validate._24hr(x)
-                    date, month, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'mm-dd-yyyy hh:mm' or date_format == 'mm.dd.yyyy hh:mm' or date_format == 'mm dd yyyy hh:mm' or date_format == 'mm/dd/yyyy hh:mm':
-                if y:
-                    var, date_time = Validate._24hr(y)
-                    month, date, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'mm-dd-yy hh:mm' or date_format == 'mm.dd.yy hh:mm' or date_format == 'mm dd yy hh:mm' or date_format == 'mm/dd/yy hh:mm':
-                if z:
-                    var, date_time = Validate._24hr(z)
-                    month, date, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'dd-mm-yy hh:mm' or date_format == 'dd.mm.yy hh:mm' or date_format == 'dd mm yy hh:mm' or date_format == 'dd/mm/yy hh:mm':
-                if a:
-                    var, date_time = Validate._24hr(a)
-                    date, month, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'dd-mon-yy hh:mm' or date_format == 'dd.mon.yy hh:mm' or date_format == 'dd mon yy hh:mm' or date_format == 'dd/mon/yy hh:mm' or date_format == 'dd mon,yy hh:mm':
-                if b:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'dd-mon-yyyy hh:mm' or date_format == 'dd.mon.yyyy hh:mm' or date_format == 'dd mon yyyy hh:mm' or date_format == 'dd/mon/yyyy hh:mm' or date_format == 'dd mon,yyyy hh:mm':
-                if c:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'yyyy-mon-dd hh:mm' or date_format == 'yyyy.mon.dd hh:mm' or date_format == 'yyyy mon dd hh:mm' or date_format == 'yyyy/mon/dd hh:mm' or date_format == 'yyyy,mon dd hh:mm':
-                if d:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'yyyy-dd-mon hh:mm' or date_format == 'yyyy.dd.mon hh:mm' or date_format == 'yyyy dd mon hh:mm' or date_format == 'yyyy/dd/mon hh:mm' or date_format == 'yyyy,dd mon hh:mm':
-                if e:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'yyyy-mm-dd hh:mm' or date_format == 'yyyy.mm.dd hh:mm' or date_format == 'yyyy mm dd hh:mm' or date_format == 'yyyy/mm/dd hh:mm':
-                if f:
-                    var, date_time = Validate._24hr(f)
-                    year, month, date = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'yyyy-dd-mm hh:mm' or date_format == 'yyyy.dd.mm hh:mm' or date_format == 'yyyy dd mm hh:mm' or date_format == 'yyyy/dd/mm hh:mm':
-                if g:
-                    var, date_time = Validate._24hr(g)
-                    year, date, month = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'mon-dd-yyyy hh:mm' or date_format == 'mon.dd.yyyy hh:mm' or date_format == 'mon dd yyyy hh:mm' or date_format == 'mon/dd/yyyy hh:mm' or date_format == 'mon dd,yyyy hh:mm':
-                if h:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'mon-dd-yy hh:mm' or date_format == 'mon.dd.yy hh:mm' or date_format == 'mon dd yy hh:mm' or date_format == 'mon/dd/yy hh:mm' or date_format == 'mon dd,yy hh:mm':
-                if i:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'dd-mm-yyyy hh:mm am/pm' or date_format == 'dd.mm.yyyy hh:mm am/pm ' or date_format == 'dd mm yyyy hh:mm am/pm' or date_format == 'dd/mm/yyyy hh:mm am/pm':
-                if xt:
-                    var, date_time = Validate._12hrspace(xt)
-                    date, month, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'dd-mm-yyyy hh:mmam/pm' or date_format == 'dd.mm.yyyy hh:mmam/pm' or date_format == 'dd mm yyyy hh:mmam/pm' or date_format == 'dd/mm/yyyy hh:mmam/pm':
-                if xt:
-                    # withoutspace
-                    var, date_time = Validate._12hrnospace(xt)
-                    date, month, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'mm-dd-yyyy hh:mm am/pm' or date_format == 'mm.dd.yyyy hh:mm am/pm' or date_format == 'mm dd yyyy hh:mm am/pm' or date_format == 'mm/dd/yyyy hh:mm am/pm':
-                if yt:
-                    var, date_time = Validate._12hrspace(yt)
-                    month, date, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'mm-dd-yyyy hh:mmam/pm' or date_format == 'mm.dd.yyyy hh:mmam/pm' or date_format == 'mm dd yyyy hh:mmam/pm' or date_format == 'mm/dd/yyyy hh:mmam/pm':
-                if yt:
-                    # withoutspace
-                    var, date_time = Validate._12hrnospace(yt)
-                    month, date, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'mm-dd-yy hh:mm am/pm' or date_format == 'mm.dd.yy hh:mm am/pm' or date_format == 'mm dd yy hh:mm am/pm' or date_format == 'mm/dd/yy hh:mm am/pm':
-                if zt:
-                    var, date_time = Validate._12hrspace(zt)
-                    month, date, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'mm-dd-yy hh:mmam/pm' or date_format == 'mm.dd.yy hh:mmam/pm' or date_format == 'mm dd yy hh:mmam/pm' or date_format == 'mm/dd/yy hh:mmam/pm':
-                if zt:
-                    # withoutspace
-                    var, date_time = Validate._12hrnospace(zt)
-                    month, date, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'dd-mm-yy hh:mm am/pm' or date_format == 'dd.mm.yy hh:mm am/pm' or date_format == 'dd mm yy hh:mm am/pm' or date_format == 'dd/mm/yy hh:mm am/pm':
-                if at:
-                    var, date_time = Validate._12hrspace(at)
-                    date, month, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'dd-mm-yy hh:mmam/pm' or date_format == 'dd.mm.yy hh:mmam/pm' or date_format == 'dd mm yy hh:mmam/pm' or date_format == 'dd/mm/yy hh:mmam/pm':
-                if at:
-                    # withoutspace
-                    var, date_time = Validate._12hrnospace(at)
-                    date, month, year = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif (date_format == 'dd-mon-yy hh:mm am/pm' or date_format == 'dd.mon.yy hh:mm am/pm' or date_format == 'dd mon yy hh:mm am/pm' or date_format == 'dd/mon/yy hh:mm am/pm' or date_format == 'dd mon,yy hh:mm am/pm' or
-                  date_format == 'dd-mon-yy hh:mmam/pm' or date_format == 'dd.mon.yy hh:mmam/pm' or date_format == 'dd mon yy hh:mmam/pm' or date_format == 'dd/mon/yy hh:mmam/pm' or date_format == 'dd mon,yy hh:mmam/pm'):
-                if bt:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif(date_format == 'dd-mon-yyyy hh:mm am/pm' or date_format == 'dd.mon.yyyy hh:mm am/pm' or date_format == 'dd mon yyyy hh:mm am/pm' or date_format == 'dd/mon/yyyy hh:mm am/pm' or date_format == 'dd mon,yyyy hh:mm am/pm' or
-                 date_format == 'dd-mon-yyyy hh:mmam/pm' or date_format == 'dd.mon.yyyy hh:mmam/pm' or date_format == 'dd mon yyyy hh:mmam/pm' or date_format == 'dd/mon/yyyy hh:mmam/pm'):
-                if ct:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif(date_format == 'yyyy-mon-dd hh:mm am/pm' or date_format == 'yyyy.mon.dd hh:mm am/pm' or date_format == 'yyyy mon dd hh:mm am/pm' or date_format == 'yyyy/mon/dd hh:mm am/pm' or date_format == 'yyyy,mon dd hh:mm am/pm' or
-                 date_format == 'yyyy-mon-dd hh:mmam/pm' or date_format == 'yyyy.mon.dd hh:mmam/pm' or date_format == 'yyyy mon dd hh:mmam/pm' or date_format == 'yyyy/mon/dd hh:mmam/pm' or date_format == 'yyyy,mon dd hh:mm am/pm'):
-                if dt:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif(date_format == 'yyyy-dd-mon hh:mm am/pm' or date_format == 'yyyy.dd.mon hh:mm am/pm' or date_format == 'yyyy dd mon hh:mm am/pm' or date_format == 'yyyy/dd/mon hh:mm am/pm' or date_format == 'yyyy,dd mon hh:mm am/pm'
-                 or date_format == 'yyyy-dd-mon hh:mmam/pm' or date_format == 'yyyy.dd.mon hh:mmam/pm' or date_format == 'yyyy dd mon hh:mmam/pm' or date_format == 'yyyy/dd/mon hh:mmam/pm' or date_format == 'yyyy,dd mon hh:mm am/pm'):
-                if et:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'yyyy-mm-dd hh:mm am/pm' or date_format == 'yyyy.mm.dd hh:mm am/pm' or date_format == 'yyyy mm dd hh:mm am/pm' or date_format == 'yyyy/mm/dd hh:mm am/pm':
-                if ft:
-                    var, date_time = Validate._12hrspace(ft)
-                    year, month, date = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'yyyy-mm-dd hh:mmam/pm' or date_format == 'yyyy.mm.dd hh:mmam/pm' or date_format == 'yyyy mm dd hh:mmam/pm' or date_format == 'yyyy/mm/dd hh:mmam/pm':
-                if ft:
-                    # withoutspace
-                    var, date_time = Validate._12hrnospace(ft)
-                    year, month, date = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'yyyy-dd-mm hh:mm am/pm' or date_format == 'yyyy.dd.mm hh:mm am/pm' or date_format == 'yyyy dd mm hh:mm am/pm' or date_format == 'yyyy/dd/mm hh:mm am/pm':
-                if gt:
-                    var, date_time = Validate._12hrspace(gt)
-                    year, date, month = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif date_format == 'yyyy-dd-mm hh:mmam/pm' or date_format == 'yyyy.dd.mm hh:mmam/pm' or date_format == 'yyyy dd mm hh:mmam/pm' or date_format == 'yyyy/dd/mm hh:mmam/pm':
-                if gt:
-                    # without space
-                    var, date_time = Validate._12hrnospace(gt)
-                    year, date, month = re.split(r"[\s -/.]", var)
-                    curr_format = Validate.datething(date, month, year, date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif(date_format == 'mon-dd-yyyy hh:mm am/pm' or date_format == 'mon.dd.yyyy hh:mm am/pm' or date_format == 'mon dd yyyy hh:mm am/pm' or date_format == 'mon/dd/yyyy hh:mm am/pm' or date_format == 'mon dd,yyyy hh:mm am/pm'
-                 or date_format == 'mon-dd-yyyy hh:mmam/pm' or date_format == 'mon.dd.yyyy hh:mmam/pm' or date_format == 'mon dd yyyy hh:mmam/pm' or date_format == 'mon/dd/yyyy hh:mmam/pm' or date_format == 'mon dd,yyyy hh:mmam/pm'):
-                if ht:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
-
-            elif(date_format == 'mon-dd-yy hh:mm am/pm' or date_format == 'mon.dd.yy hh:mm am/pm' or date_format == 'mon dd yy hh:mm am/pm' or date_format == 'mon/dd/yy hh:mm am/pm' or date_format == 'mon dd,yy hh:mm am/pm'
-                 or date_format == 'mon-dd-yy hh:mmam/pm' or date_format == 'mon.dd.yy hh:mmam/pm' or date_format == 'mon dd yy hh:mmam/pm' or date_format == 'mon/dd/yy hh:mmam/pm' or date_format == 'mon dd,yy hh:mmam/pm'):
-                if it:
-                    curr_format = Validate.abbr_month(date_time)
-                    return curr_format
-                else:
-                    print("Format does not match with the entered date and time.")
+         if date_format == 'dd-mm-yyyy hh:mm' or date_format == 'dd.mm.yyyy hh:mm' or date_format == 'dd mm yyyy hh:mm' or date_format == 'dd/mm/yyyy hh:mm':
+            if x:
+                var, date_time = Validate._24hr(x)
+                date, month, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
 
             else:
-                print("Enter a valid format")
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'mm-dd-yyyy hh:mm',
+            'mm.dd.yyyy hh:mm',
+            'mm dd yyyy hh:mm',
+            'mm/dd/yyyy hh:mm',
+        ]:
+            if y:
+                var, date_time = Validate._24hr(y)
+                month, date, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'mm-dd-yy hh:mm',
+            'mm.dd.yy hh:mm',
+            'mm dd yy hh:mm',
+            'mm/dd/yy hh:mm',
+        ]:
+            if z:
+                var, date_time = Validate._24hr(z)
+                month, date, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'dd-mm-yy hh:mm',
+            'dd.mm.yy hh:mm',
+            'dd mm yy hh:mm',
+            'dd/mm/yy hh:mm',
+        ]:
+            if a:
+                var, date_time = Validate._24hr(a)
+                date, month, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'dd-mon-yy hh:mm',
+            'dd.mon.yy hh:mm',
+            'dd mon yy hh:mm',
+            'dd/mon/yy hh:mm',
+            'dd mon,yy hh:mm',
+        ]:
+            if b:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'dd-mon-yyyy hh:mm',
+            'dd.mon.yyyy hh:mm',
+            'dd mon yyyy hh:mm',
+            'dd/mon/yyyy hh:mm',
+            'dd mon,yyyy hh:mm',
+        ]:
+            if c:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'yyyy-mon-dd hh:mm',
+            'yyyy.mon.dd hh:mm',
+            'yyyy mon dd hh:mm',
+            'yyyy/mon/dd hh:mm',
+            'yyyy,mon dd hh:mm',
+        ]:
+            if d:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'yyyy-dd-mon hh:mm',
+            'yyyy.dd.mon hh:mm',
+            'yyyy dd mon hh:mm',
+            'yyyy/dd/mon hh:mm',
+            'yyyy,dd mon hh:mm',
+        ]:
+            if e:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format == 'yyyy-mm-dd hh:mm' or date_format == 'yyyy.mm.dd hh:mm' or date_format == 'yyyy mm dd hh:mm' or date_format == 'yyyy/mm/dd hh:mm':
+            if f:
+                var, date_time = Validate._24hr(f)
+                year, month, date = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format == 'yyyy-dd-mm hh:mm' or date_format == 'yyyy.dd.mm hh:mm' or date_format == 'yyyy dd mm hh:mm' or date_format == 'yyyy/dd/mm hh:mm':
+            if g:
+                var, date_time = Validate._24hr(g)
+                year, date, month = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'mon-dd-yyyy hh:mm',
+            'mon.dd.yyyy hh:mm',
+            'mon dd yyyy hh:mm',
+            'mon/dd/yyyy hh:mm',
+            'mon dd,yyyy hh:mm',
+        ]:
+            if h:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format == 'mon-dd-yy hh:mm' or date_format == 'mon.dd.yy hh:mm' or date_format == 'mon dd yy hh:mm' or date_format == 'mon/dd/yy hh:mm' or date_format == 'mon dd,yy hh:mm':
+            if i:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format == 'dd-mm-yyyy hh:mm am/pm' or date_format == 'dd.mm.yyyy hh:mm am/pm ' or date_format == 'dd mm yyyy hh:mm am/pm' or date_format == 'dd/mm/yyyy hh:mm am/pm':
+            if xt:
+                var, date_time = Validate._12hrspace(xt)
+                date, month, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'dd-mm-yyyy hh:mmam/pm',
+            'dd.mm.yyyy hh:mmam/pm',
+            'dd mm yyyy hh:mmam/pm',
+            'dd/mm/yyyy hh:mmam/pm',
+        ]:
+            if xt:
+                # withoutspace
+                var, date_time = Validate._12hrnospace(xt)
+                date, month, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'mm-dd-yyyy hh:mm am/pm',
+            'mm.dd.yyyy hh:mm am/pm',
+            'mm dd yyyy hh:mm am/pm',
+            'mm/dd/yyyy hh:mm am/pm',
+        ]:
+            if yt:
+                var, date_time = Validate._12hrspace(yt)
+                month, date, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'mm-dd-yyyy hh:mmam/pm',
+            'mm.dd.yyyy hh:mmam/pm',
+            'mm dd yyyy hh:mmam/pm',
+            'mm/dd/yyyy hh:mmam/pm',
+        ]:
+            if yt:
+                # withoutspace
+                var, date_time = Validate._12hrnospace(yt)
+                month, date, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format == 'mm-dd-yy hh:mm am/pm' or date_format == 'mm.dd.yy hh:mm am/pm' or date_format == 'mm dd yy hh:mm am/pm' or date_format == 'mm/dd/yy hh:mm am/pm':
+            if zt:
+                var, date_time = Validate._12hrspace(zt)
+                month, date, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format == 'mm-dd-yy hh:mmam/pm' or date_format == 'mm.dd.yy hh:mmam/pm' or date_format == 'mm dd yy hh:mmam/pm' or date_format == 'mm/dd/yy hh:mmam/pm':
+            if zt:
+                # withoutspace
+                var, date_time = Validate._12hrnospace(zt)
+                month, date, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'dd-mm-yy hh:mm am/pm',
+            'dd.mm.yy hh:mm am/pm',
+            'dd mm yy hh:mm am/pm',
+            'dd/mm/yy hh:mm am/pm',
+        ]:
+            if at:
+                var, date_time = Validate._12hrspace(at)
+                date, month, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'dd-mm-yy hh:mmam/pm',
+            'dd.mm.yy hh:mmam/pm',
+            'dd mm yy hh:mmam/pm',
+            'dd/mm/yy hh:mmam/pm',
+        ]:
+            if at:
+                # withoutspace
+                var, date_time = Validate._12hrnospace(at)
+                date, month, year = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, int(year) + 2000, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'dd-mon-yy hh:mm am/pm',
+            'dd.mon.yy hh:mm am/pm',
+            'dd mon yy hh:mm am/pm',
+            'dd/mon/yy hh:mm am/pm',
+            'dd mon,yy hh:mm am/pm',
+            'dd-mon-yy hh:mmam/pm',
+            'dd.mon.yy hh:mmam/pm',
+            'dd mon yy hh:mmam/pm',
+            'dd/mon/yy hh:mmam/pm',
+            'dd mon,yy hh:mmam/pm',
+        ]:
+            if bt:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'dd-mon-yyyy hh:mm am/pm',
+            'dd.mon.yyyy hh:mm am/pm',
+            'dd mon yyyy hh:mm am/pm',
+            'dd/mon/yyyy hh:mm am/pm',
+            'dd mon,yyyy hh:mm am/pm',
+            'dd-mon-yyyy hh:mmam/pm',
+            'dd.mon.yyyy hh:mmam/pm',
+            'dd mon yyyy hh:mmam/pm',
+            'dd/mon/yyyy hh:mmam/pm',
+        ]:
+            if ct:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif (
+            date_format == 'yyyy-mon-dd hh:mm am/pm'
+            or date_format == 'yyyy.mon.dd hh:mm am/pm'
+            or date_format == 'yyyy mon dd hh:mm am/pm'
+            or date_format == 'yyyy/mon/dd hh:mm am/pm'
+            or date_format == 'yyyy,mon dd hh:mm am/pm'
+            or date_format == 'yyyy-mon-dd hh:mmam/pm'
+            or date_format == 'yyyy.mon.dd hh:mmam/pm'
+            or date_format == 'yyyy mon dd hh:mmam/pm'
+            or date_format == 'yyyy/mon/dd hh:mmam/pm'
+        ):
+            if dt:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'yyyy-dd-mon hh:mm am/pm',
+            'yyyy.dd.mon hh:mm am/pm',
+            'yyyy dd mon hh:mm am/pm',
+            'yyyy/dd/mon hh:mm am/pm',
+            'yyyy,dd mon hh:mm am/pm',
+            'yyyy-dd-mon hh:mmam/pm',
+            'yyyy.dd.mon hh:mmam/pm',
+            'yyyy dd mon hh:mmam/pm',
+            'yyyy/dd/mon hh:mmam/pm',
+        ]:
+            if et:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format == 'yyyy-mm-dd hh:mm am/pm' or date_format == 'yyyy.mm.dd hh:mm am/pm' or date_format == 'yyyy mm dd hh:mm am/pm' or date_format == 'yyyy/mm/dd hh:mm am/pm':
+            if ft:
+                var, date_time = Validate._12hrspace(ft)
+                year, month, date = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'yyyy-mm-dd hh:mmam/pm',
+            'yyyy.mm.dd hh:mmam/pm',
+            'yyyy mm dd hh:mmam/pm',
+            'yyyy/mm/dd hh:mmam/pm',
+        ]:
+            if ft:
+                # withoutspace
+                var, date_time = Validate._12hrnospace(ft)
+                year, month, date = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'yyyy-dd-mm hh:mm am/pm',
+            'yyyy.dd.mm hh:mm am/pm',
+            'yyyy dd mm hh:mm am/pm',
+            'yyyy/dd/mm hh:mm am/pm',
+        ]:
+            if gt:
+                var, date_time = Validate._12hrspace(gt)
+                year, date, month = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'yyyy-dd-mm hh:mmam/pm',
+            'yyyy.dd.mm hh:mmam/pm',
+            'yyyy dd mm hh:mmam/pm',
+            'yyyy/dd/mm hh:mmam/pm',
+        ]:
+            if gt:
+                # without space
+                var, date_time = Validate._12hrnospace(gt)
+                year, date, month = re.split(r"[\s -/.]", var)
+                curr_format = Validate.datething(date, month, year, date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif(date_format == 'mon-dd-yyyy hh:mm am/pm' or date_format == 'mon.dd.yyyy hh:mm am/pm' or date_format == 'mon dd yyyy hh:mm am/pm' or date_format == 'mon/dd/yyyy hh:mm am/pm' or date_format == 'mon dd,yyyy hh:mm am/pm'
+             or date_format == 'mon-dd-yyyy hh:mmam/pm' or date_format == 'mon.dd.yyyy hh:mmam/pm' or date_format == 'mon dd yyyy hh:mmam/pm' or date_format == 'mon/dd/yyyy hh:mmam/pm' or date_format == 'mon dd,yyyy hh:mmam/pm'):
+            if ht:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        elif date_format in [
+            'mon-dd-yy hh:mm am/pm',
+            'mon.dd.yy hh:mm am/pm',
+            'mon dd yy hh:mm am/pm',
+            'mon/dd/yy hh:mm am/pm',
+            'mon dd,yy hh:mm am/pm',
+            'mon-dd-yy hh:mmam/pm',
+            'mon.dd.yy hh:mmam/pm',
+            'mon dd yy hh:mmam/pm',
+            'mon/dd/yy hh:mmam/pm',
+            'mon dd,yy hh:mmam/pm',
+        ]:
+            if it:
+                curr_format = Validate.abbr_month(date_time)
+                return curr_format
+            else:
+                print("Format does not match with the entered date and time.")
+
+        else:
+            print("Enter a valid format")
 
 
     @staticmethod
