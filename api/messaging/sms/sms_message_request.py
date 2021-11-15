@@ -132,22 +132,26 @@ class SMSMessageRequest(KRequest):
         requirements.
         """
 
-        if Validate.message(self.message) and Validate.number(self.to) and \
-                Validate.date_and_time_validation(self.datetime, self.format):
-            correct_time = Validate.date_and_time_validation(self.datetime, self.format)
-            url = '{}&method={}&message={}&to={}&sender={}&time={}'.format(BASEURL, SMSMessageRequest.SMS, self.message,
-                                                                           self.to, SENDERID, correct_time)
-            if self.dlr_url:
-                url += '&dlrurl={}'.format(self.dlr_url)
-            if self.custom:
-                url += '&custom={}'.format(self.custom)
-            if self.unicode:
-                url += '&unicode={}'.format(self.unicode)
-            if self.flash:
-                url += '&flash={}'.format(self.flash)
-            response = Klient(url).response()
-            sms_message_response = SMSMessageResponse(response=response)
-            return sms_message_response
+        if (
+            not Validate.message(self.message)
+            or not Validate.number(self.to)
+            or not Validate.date_and_time_validation(self.datetime, self.format)
+        ):
+            return
+
+        correct_time = Validate.date_and_time_validation(self.datetime, self.format)
+        url = '{}&method={}&message={}&to={}&sender={}&time={}'.format(BASEURL, SMSMessageRequest.SMS, self.message,
+                                                                       self.to, SENDERID, correct_time)
+        if self.dlr_url:
+            url += '&dlrurl={}'.format(self.dlr_url)
+        if self.custom:
+            url += '&custom={}'.format(self.custom)
+        if self.unicode:
+            url += '&unicode={}'.format(self.unicode)
+        if self.flash:
+            url += '&flash={}'.format(self.flash)
+        response = Klient(url).response()
+        return SMSMessageResponse(response=response)
 
 
     def send(self):
@@ -160,20 +164,21 @@ class SMSMessageRequest(KRequest):
         requirements.
         """
 
-        if Validate.message(self.message) and Validate.number(self.to):
-            url = '{}&method={}&message={}&to={}&sender={}'.format(BASEURL, SMSMessageRequest.SMS, self.message,
-                                                                   self.to, SENDERID)
-            if self.dlr_url:
-                url += '&dlrurl={}'.format(self.dlr_url)
-            if self.custom:
-                url += '&custom={}'.format(self.custom)
-            if self.unicode:
-                url += '&unicode={}'.format(self.unicode)
-            if self.flash:
-                url += '&flash={}'.format(self.flash)
-            response = Klient(url).response()
-            sms_message_response = SMSMessageResponse(response=response)
-            return sms_message_response
+        if not Validate.message(self.message) or not Validate.number(self.to):
+            return
+
+        url = '{}&method={}&message={}&to={}&sender={}'.format(BASEURL, SMSMessageRequest.SMS, self.message,
+                                                               self.to, SENDERID)
+        if self.dlr_url:
+            url += '&dlrurl={}'.format(self.dlr_url)
+        if self.custom:
+            url += '&custom={}'.format(self.custom)
+        if self.unicode:
+            url += '&unicode={}'.format(self.unicode)
+        if self.flash:
+            url += '&flash={}'.format(self.flash)
+        response = Klient(url).response()
+        return SMSMessageResponse(response=response)
 
 
     def set_schedule(self, datetime, format):
